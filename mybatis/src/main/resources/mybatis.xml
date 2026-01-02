@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="datasourse.properties"/>
+<!--    <properties>-->
+<!--    <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--    <property name="url" value="jdbc:mysql://localhost:3306/tostu"/>-->
+<!--    <property name="username" value="root"/>-->
+<!--    <property name="password" value="111222"/>-->
+<!--    </properties>-->
+    <settings>
+        <setting name="logImpl" value="SLF4J"/>
+    </settings>
+    <environments default="test">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                    <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                    <property name="url" value="jdbc:mysql://localhost:3306/tostu"/>
+                    <property name="username" value="root"/>
+                    <property name="password" value="111222"/>
+            </dataSource>
+        </environment>
+
+
+        <environment id="test">
+            <!--  切换数据库-->
+            <transactionManager type="JDBC"/>
+            <!--            <transactionManager type="JDBC"/>-->
+            <!--            <transactionManager type="MANAGED"/>-->
+            <!--            type = JBDC或者Managed-->
+            <!--            JBDC自动开启事务，手动提交-->
+            <!--            MANAGED里面setAutoCommit是false-->
+            <dataSource type="POOLED">
+                <!--                    type = POOLED,UNPOOIED-->
+                <!--                    UNPOOLED-创建新对象在线程池-->
+                <property name="driver" value="${mybatis.driver}"/>
+                <property name="url" value="${mybatis.url}"/>
+                <property name="username" value="${mybatis.username}"/>
+                <property name="password" value="${mybatis.password}"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+    <mappers>
+<!--        <mapper resource="CRUS.xml"/>-->
+        <mapper resource="action.xml"/>
+    </mappers>
+
+</configuration>
