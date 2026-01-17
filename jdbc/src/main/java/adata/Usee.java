@@ -2,44 +2,37 @@ package adata;
 
 public class Usee {
     /**
-     * `name` varchar(10) DEFAULT NULL,
-     *   `id` int DEFAULT NULL COMMENT '工号',
-     *   `workplace` varchar(10) DEFAULT NULL COMMENT '居住地',
-     *   `salary` double DEFAULT NULL,
-     *   `job` varchar(10) DEFAULT NULL COMMENT '岗位',
-     *   `gender` varchar(3) DEFAULT NULL COMMENT '性别'
+     * create table shuihu
+     * (
+     *     name      varchar(10) null,
+     *     id        int         null comment '工号',
+     *     workplace varchar(10) null comment '居住地',
+     *     salary    double      null,
+     *     job       varchar(10) null comment '岗位',
+     *     gender    varchar(10) null
+     * )
+     *     comment '水浒传';
      */
+
+    // 对应数据库字段: name varchar(10) null
     private String name;
-    private int id;
+
+    // 对应数据库字段: id int null comment '工号'
+    private Integer id;
+
+    // 对应数据库字段: workplace varchar(10) null comment '居住地'
     private String workplace;
-    private double salary;
+
+    // 对应数据库字段: salary double null
+    private Double salary;
+
+    // 对应数据库字段: job varchar(10) null comment '岗位'
     private String job;
+
+    // 对应数据库字段: gender varchar(10) null
     private String gender;
 
-    @Override
-    public String toString() {
-        return "Usee{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
-                ", workplace='" + workplace + '\'' +
-                ", salary=" + salary +
-                ", job='" + job + '\'' +
-                ", gender='" + gender + '\'' +
-                '}';
-    }
-
-    public Usee(String name, int id, String workplace, double salary, String job, String gender) {
-        this.name = name;
-        this.id = id;
-        this.workplace = workplace;
-        this.salary = salary;
-        this.job = job;
-        this.gender = gender;
-    }
-
-    public Usee() {
-    }
-
+    // Getter和Setter方法
     public String getName() {
         return name;
     }
@@ -48,11 +41,11 @@ public class Usee {
         this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -64,11 +57,11 @@ public class Usee {
         this.workplace = workplace;
     }
 
-    public double getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 
@@ -80,11 +73,35 @@ public class Usee {
         this.job = job;
     }
 
-    public String getgender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setgender(String gender) {
+    public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public Usee() {
+    }
+
+    public Usee(String name, Integer id, String workplace, Double salary, String job, String gender) {
+        this.name = name;
+        this.id = id;
+        this.workplace = workplace;
+        this.salary = salary;
+        this.job = job;
+        this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return "Usee{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", workplace='" + workplace + '\'' +
+                ", salary=" + salary +
+                ", job='" + job + '\'' +
+                ", gender='" + gender + '\'' +
+                '}';
     }
 }
