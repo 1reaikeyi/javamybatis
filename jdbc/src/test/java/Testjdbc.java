@@ -1,6 +1,6 @@
-import adata.ExcuteQuery;
-import adata.ExecuteUpdate;
-import adata.Usee;
+import config.ExcuteQuery;
+import config.ExecuteUpdate;
+import config.Usee;
 import org.junit.Test;
 
 public class Testjdbc {
@@ -19,6 +19,17 @@ public class Testjdbc {
         ExecuteUpdate update = new ExecuteUpdate();
         Usee usee = new Usee("张飞", 10, "北京", 10000.0, "拉煤", "男");
         update.insert(usee);
+    }
+    @Test
+    public void test4() {
+        ExecuteUpdate update = new ExecuteUpdate();
+        update.delete(10);
+    }
+
+    @Test
+    public void test5() {
+        ExecuteUpdate update = new ExecuteUpdate();
+        update.update("10", "上海");
     }
 
 

@@ -1,9 +1,10 @@
-import adata.Usee;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
+import pool.Usee;
 
 import java.io.InputStream;
 import java.util.List;
@@ -15,7 +16,7 @@ public class Testclass {
         InputStream inputStream = Resources.getResourceAsStream("mybatis.xml");
         SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder.build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        Usee usee = new Usee("宋江",20,"梁山",800,"骗子","大侠");
+        Usee usee = new Usee("宋江",20,"梁山",800.0,"骗子","大侠");
         int i = sqlSession.insert("insertUser",usee);
         System.out.println(i);
         sqlSession.commit();

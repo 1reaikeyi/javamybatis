@@ -5,12 +5,14 @@
 <mapper namespace="action">
 
     <!-- 查询所有用户 -->
-    <select id="getUserById" resultType="adata.Usee">
-        select * from shuihu where id = #{id};
-    </select>
-    <select id="getAllUsers" resultType="adata.Usee">
+    <select id="getAllUsers" resultType="CRUS.Usee">
         select * from shuihu ;
     </select>
+
+    <select id="getUserById" resultType="CRUS.Usee">
+        select * from shuihu where id = #{id};
+    </select>
+
 
 
 </mapper>

@@ -1,13 +1,13 @@
-package adata;
+package config;
 
 import java.sql.*;
 
 
 public class ExcuteQuery {
-    Connection connect = JDBC.getConnection();
-    public void selectAll(){
-        String sql ="select * from shuihu";
 
+    public void selectAll(){
+        Connection connect = JDBC.getConnection();
+        String sql ="select * from shuihu";
         try {
             PreparedStatement preparedStatement =connect.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -32,6 +32,7 @@ public class ExcuteQuery {
 
     }
     public void selectById(int id){
+        Connection connect = JDBC.getConnection();
         String sql ="select * from shuihu where id = ?";
         try {
             PreparedStatement preparedStatement =connect.prepareStatement(sql);

@@ -7,12 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring" />
-        <module name="pool" />
         <module name="jdbc" />
         <module name="mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="pool" target="17" />
       <module name="spring_jdbc" target="17" />
     </bytecodeTargetLevel>
   </component>

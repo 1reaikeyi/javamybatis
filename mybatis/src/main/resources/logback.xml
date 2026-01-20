@@ -17,7 +17,5 @@
     <!-- 3. 根日志配置 -->
     <root level="DEBUG">
         <appender-ref ref="STDOUT"/>
-        <!-- 可以添加其他 Appender，如文件输出 -->
-<!--         <appender-ref ref="FILE"/>-->
     </root>
 </configuration>

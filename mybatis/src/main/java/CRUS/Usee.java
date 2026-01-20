@@ -1,4 +1,4 @@
-package adata;
+package CRUS;
 
 public class Usee {
     /**
@@ -95,7 +95,7 @@ public class Usee {
 
     @Override
     public String toString() {
-        return "Usee{" +
+        return "config.Usee{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
                 ", workplace='" + workplace + '\'' +
