@@ -19,8 +19,8 @@ public class Druid {
         dataSource.setUsername("root");
         dataSource.setPassword(System.getenv("Mysql_password"));
         // 连接池配置
-        dataSource.setInitialSize(3);
-        dataSource.setMaxActive(4);
+        dataSource.setInitialSize(2);
+        dataSource.setMaxActive(3);
         dataSource.setMaxWait(3000);
     }
 

@@ -12,7 +12,6 @@ import java.util.Map;
 public class Testaction {
     public static void main(String[] args) throws IOException {
 //        InputStream inputStream = Resources.getResourceAsStream("src/main/resources/mybatis.xml");
-
         InputStream inputStream = new FileInputStream("src/main/resources/mybatis.xml");
 
         SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();

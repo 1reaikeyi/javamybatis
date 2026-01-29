@@ -37,8 +37,8 @@
 
     </environments>
     <mappers>
-<!--        <mapper resource="CRUD.xml"/>-->
-        <mapper resource="resource/action.xml"/>
+        <mapper resource="CRUD.xml"/>
+<!--        <mapper resource="action.xml"/>-->
     </mappers>
 
 </configuration>

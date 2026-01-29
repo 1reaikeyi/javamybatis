@@ -1,15 +1,14 @@
 
+import function.Usee;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
-import pool.Usee;
-
 import java.io.InputStream;
 import java.util.List;
 
-public class Testclass {
+public class TestCRUD {
     @org.junit.Test
    public void testinsert() throws Exception {
         SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();

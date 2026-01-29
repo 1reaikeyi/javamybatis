@@ -1,4 +1,4 @@
-package CRUS;
+package function;
 
 public class Usee {
     /**
