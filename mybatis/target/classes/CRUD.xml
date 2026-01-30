@@ -10,9 +10,7 @@
     </insert>
 
     <delete id="deleteUser">
-        delete from shuihu
-        where
-            id = #{id};
+        delete from shuihu where id = #{id};
     </delete>
 
     <update id="updateUser">

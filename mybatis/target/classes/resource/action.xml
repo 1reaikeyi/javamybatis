@@ -6,6 +6,7 @@
 <!--    namespace 为整个映射文件提供一个唯一的命名空间，用于区分不同的映射文件。-->
 <!--    在该命名空间下定义的所有 SQL 语句都会带有这个前缀-->
 
+    <!-- 查询所有用户 -->
     <delete id="deleteUser">
         delete from shuihu where id = #{id};
     </delete>

@@ -18,10 +18,6 @@ public class Server implements Dao{
         return dao.update(accountServer);
     }
 
-    public int delete(String accountant) {
-        return dao.delete(accountant);
-    }
-
     public bmybatis.AccountServer selectById(String accountant) {
         return dao.selectById(accountant);
     }

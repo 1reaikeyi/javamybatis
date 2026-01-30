@@ -10,6 +10,7 @@
         <setting name="logImpl" value="SLF4J"/>
     </settings>
 
+
     <environments default="develop">
         <environment id="develop">
             <transactionManager type="JDBC"/>
@@ -18,19 +19,32 @@
                 <property name="url" value="${mybatis.url}"/>
                 <property name="username" value="${mybatis.username}"/>
                 <property name="password" value="${mybatis.password}"/>
+                <property name="poolMaximumActiveConnections" value="2"/>
+                <property name="poolMaximumIdleConnections" value="3"/>
+                <property name="poolMaximumCheckoutTime" value="3000"/>
+
             </dataSource>
         </environment>
 
-        <environment id="test">
+        <environment id="unpooled">
             <transactionManager type="JDBC"/>
-            <dataSource type="config.DruidDataSourceFactory">
+            <dataSource type="UNPOOLED">
                 <property name="driver" value="${mybatis.driver}"/>
                 <property name="url" value="${mybatis.url}"/>
                 <property name="username" value="${mybatis.username}"/>
                 <property name="password" value="${mybatis.password}"/>
-                <property name="initialSize" value="5"/>
-                <property name="maxActive" value="20"/>
-                <property name="minIdle" value="5"/>
+            </dataSource>
+        </environment>
+
+        <environment id="druid">
+            <transactionManager type="JDBC"/>
+            <dataSource type="function.DruidDataSourceFactory">
+                <property name="driver" value="${mybatis.driver}"/>
+                <property name="url" value="${mybatis.url}"/>
+                <property name="username" value="${mybatis.username}"/>
+                <property name="password" value="${mybatis.password}"/>
+                <property name="initialSize" value="2"/>
+                <property name="maxActive" value="3"/>
                 <property name="maxWait" value="3000"/>
             </dataSource>
         </environment>
@@ -38,7 +52,7 @@
     </environments>
     <mappers>
         <mapper resource="CRUD.xml"/>
-<!--        <mapper resource="action.xml"/>-->
+        <mapper resource="resource/action.xml"/>
     </mappers>
 
 </configuration>
