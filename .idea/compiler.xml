@@ -9,6 +9,7 @@
         <module name="spring" />
         <module name="mybatis_build" />
         <module name="jdbc" />
+        <module name="web" />
         <module name="mybatis" />
       </profile>
     </annotationProcessing>
