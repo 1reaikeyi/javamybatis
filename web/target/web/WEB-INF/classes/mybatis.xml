@@ -19,10 +19,6 @@
                 <property name="url" value="${mybatis.url}"/>
                 <property name="username" value="${mybatis.username}"/>
                 <property name="password" value="${mybatis.password}"/>
-                <property name="poolMaximumActiveConnections" value="2"/>
-                <property name="poolMaximumIdleConnections" value="3"/>
-                <property name="poolMaximumCheckoutTime" value="3000"/>
-
             </dataSource>
         </environment>
 

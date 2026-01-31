@@ -4,6 +4,7 @@ import Util.SqlSessionUtil;
 import org.apache.ibatis.session.SqlSession;
 import pojo.Account;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class DaoImpl implements Dao {
@@ -11,8 +12,8 @@ public class DaoImpl implements Dao {
     @Override
     public Account selectAccount(String name) {
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
-        Account setAccount = new Account();
-        setAccount.setName(name);
+        HashMap<String,String> setAccount = new HashMap<>();
+        setAccount.put("name",name);
         Account account = sqlSession.selectOne("selectAccount",setAccount);
         return account;
     }

@@ -12,7 +12,7 @@
 
     <servlet-mapping>
         <servlet-name>Server</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/function</url-pattern>
     </servlet-mapping>
 
 
