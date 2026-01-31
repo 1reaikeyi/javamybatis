@@ -1,4 +1,4 @@
-import ajbdc.AccountDao;
+import jbdc.Account;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Testjbdc {
+public class Testjbdctemplate {
     @Test
     public  void testInsert() {
         ApplicationContext ac = new ClassPathXmlApplicationContext("jdbc/jdbc.xml");
@@ -42,15 +42,15 @@ public class Testjbdc {
             JdbcTemplate jdbcTemplate = ac.getBean("jdbcTemplate", JdbcTemplate.class);
 //            String sql = "select name as accountant,moneyfrom account where name = ?";
             String sql = "select name, moneyfrom account where name = ?";
-            AccountDao accountDao = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(AccountDao.class), "马小六");
-            System.out.println(accountDao);
+            Account account = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Account.class), "马小六");
+            System.out.println(account);
         }
         @Test
         public  void testSelectAll() {
             ApplicationContext ac = new ClassPathXmlApplicationContext("jdbc/jdbc.xml");
             JdbcTemplate jdbcTemplate = ac.getBean("jdbcTemplate", JdbcTemplate.class);
             String sql = "select name, money from account";
-            List<AccountDao> accountDaos = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(AccountDao.class));
+            List<Account> accountDaos = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Account.class));
             System.out.println(accountDaos);
         }
         @Test
@@ -67,8 +67,8 @@ public class Testjbdc {
             ApplicationContext ac = new ClassPathXmlApplicationContext("jdbc/jdbc.xml");
             JdbcTemplate jdbcTemplate = ac.getBean("jdbcTemplate", JdbcTemplate.class);
             String sql = "insert into account(name,money) values(?,?)";
-            AccountDao accountDao1 = new AccountDao("马小六",1000);
-            AccountDao accountDao2 = new AccountDao("王小五",1000);
+            Account account1 = new Account("马小六",1000);
+            Account account2 = new Account("王小五",1000);
             ArrayList<Object[]> accounts = new ArrayList<>();
             accounts.add(new Object[]{"马小六",1000});
             accounts.add(new Object[]{"王小五",1000});

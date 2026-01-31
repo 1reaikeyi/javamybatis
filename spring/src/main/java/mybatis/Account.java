@@ -1,14 +1,14 @@
-package bmybatis;
+package mybatis;
 
 import org.springframework.stereotype.Component;
-@Component("account")
-public class AccountServer {
+@Component
+public class Account {
     private String accountant;
     private int money;
-    public AccountServer() {
+    public Account() {
     }
 
-    public AccountServer(String accountant, int money) {
+    public Account(String accountant, int money) {
         this.accountant = accountant;
         this.money = money;
     }
