@@ -9,6 +9,7 @@ import service.AccountServerImpl;
 
 import java.io.IOException;
 
+
 @WebServlet("/function")
 public class Server extends HttpServlet {
     @Override
@@ -23,7 +24,17 @@ public class Server extends HttpServlet {
         Double money = Double.parseDouble(money_type);
         AccountServer server = new AccountServerImpl();
         server.transfer(fromname, toname, money);
-        System.out.println("转账成功");
+        try {
+            response.sendRedirect("/ok.html");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+//        try {
+//            response.setContentType("text/html;charset=utf-8");
+//            response.getWriter().write("转账成功");
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
 }

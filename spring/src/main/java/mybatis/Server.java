@@ -2,16 +2,16 @@ package mybatis;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
-@Service("server")
+@Service
 public class Server {
     @Autowired
     private Dao dao;
     public int update(Account account) {
         return dao.update(account);
     }
+
     public Account selectById(String accountant) {
         return dao.selectById(accountant);
     }

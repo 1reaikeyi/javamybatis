@@ -14,7 +14,7 @@
     <environments default="develop">
         <environment id="develop">
             <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
+            <dataSource type="UNPOOLED">
                 <property name="driver" value="${mybatis.driver}"/>
                 <property name="url" value="${mybatis.url}"/>
                 <property name="username" value="${mybatis.username}"/>
@@ -22,11 +22,9 @@
             </dataSource>
         </environment>
 
-
     </environments>
     <mappers>
-        <mapper resource="mapper.xml"/>
-
+        <mapper resource="CRUD.xml"/>
     </mappers>
 
 </configuration>

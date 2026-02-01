@@ -16,16 +16,16 @@ import javax.sql.DataSource;
 @Configuration
 @PropertySource("classpath:database.properties")
 public class Config {
-    @Value("${driver}")
+    @Value("${database.driver}")
     private String driver;
 
-    @Value("${url}")
+    @Value("${database.url}")
     private String url;
 
-    @Value("${username}")
+    @Value("${database.username}")
     private String username;
 
-    @Value("${password}")
+    @Value("${database.password}")
     private String password;
 
     @Bean

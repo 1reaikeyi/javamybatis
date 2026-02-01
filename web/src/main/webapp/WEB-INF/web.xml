@@ -13,6 +13,7 @@
     <servlet-mapping>
         <servlet-name>Server</servlet-name>
         <url-pattern>/function</url-pattern>
+
     </servlet-mapping>
 
 

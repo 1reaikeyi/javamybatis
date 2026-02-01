@@ -2,22 +2,17 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="bmybatis.Dao">
+<mapper namespace="mybatis.Dao">
 
-
-    <insert id="insert">
-        insert into accountServer(name,money) values (#{accountant},#{money});
-    </insert>
     <update id="update">
         update accountServer set money=#{money} where name=#{accountant};
     </update>
-    <delete id="delete">
-        delete from accountServer where name=#{accountant};
-    </delete>
-    <select id="selectById" resultType="bmybatis.AccountServer">
+
+    <select id="selectById" resultType="mybatis.Account">
         select money, name as accountant from accountServer where name = #{accountant};
     </select>
-    <select id="selectAll" resultType="bmybatis.AccountServer">
+
+    <select id="selectAll" resultType="mybatis.Account">
         select money, name as accountant from accountServer;
     </select>
 

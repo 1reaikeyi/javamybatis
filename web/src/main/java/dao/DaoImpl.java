@@ -3,7 +3,6 @@ package dao;
 import Util.SqlSessionUtil;
 import org.apache.ibatis.session.SqlSession;
 import pojo.Account;
-
 import java.util.HashMap;
 import java.util.List;
 
@@ -12,19 +11,16 @@ public class DaoImpl implements Dao {
     @Override
     public Account selectAccount(String name) {
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
-        HashMap<String,String> setAccount = new HashMap<>();
-        setAccount.put("name",name);
-        Account account = sqlSession.selectOne("selectAccount",setAccount);
+        HashMap<String,String> nameMap = new HashMap<>();
+        nameMap.put("name",name);
+        Account account = sqlSession.selectOne("selectAccount",nameMap);
         return account;
     }
-
-
 
     @Override
     public void selectAll() {
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
         List<Account> accounts = sqlSession.selectList("selectAll");
-        sqlSession.close();
         for (Account account : accounts) {
             System.out.println(account);
         }
@@ -37,8 +33,6 @@ public class DaoImpl implements Dao {
         account.setName(name);
         account.setMoney(money);
         int count = sqlSession.update("update",account);
-        sqlSession.commit();
-        sqlSession.close();
         return count;
     }
 }

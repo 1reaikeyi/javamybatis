@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="function">
+
+    <insert id="insertUser">
+        insert into shuihu (name,id,workplace,salary,gender,job)
+        values (#{name},#{id},#{workplace},#{salary},#{gender},#{job});
+    </insert>
+
+    <delete id="deleteUser">
+        delete from shuihu where id = #{id};
+    </delete>
+
+    <update id="updateUser">
+        update shuihu set gender = #{gender} where id = #{id};
+    </update>
+
+    <select id="getUserById" resultType="function.Usee">
+        select * from shuihu where id = #{id};
+    </select>
+    <select id="getAllUsers" resultType="function.Usee">
+        select * from shuihu;
+    </select>
+
+</mapper>

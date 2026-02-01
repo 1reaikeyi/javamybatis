@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/jbdc_pool/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis_build/pom.xml" />
         <option value="$PROJECT_DIR$/web/pom.xml" />
+        <option value="$PROJECT_DIR$/CRUD/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
