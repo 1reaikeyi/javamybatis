@@ -29,12 +29,7 @@ public class Server extends HttpServlet {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//        try {
-//            response.setContentType("text/html;charset=utf-8");
-//            response.getWriter().write("转账成功");
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
+
     }
 
 }
