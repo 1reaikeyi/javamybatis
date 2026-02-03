@@ -6,9 +6,12 @@
 <!--    namespace 为整个映射文件提供一个唯一的命名空间，用于区分不同的映射文件。-->
 <!--    在该命名空间下定义的所有 SQL 语句都会带有这个前缀-->
 
-    <delete id="deleteUser">
-        delete from shuihu where id = #{id};
+    <delete id="deleteIn">
+        delete from shuihu where id in (${ids})
     </delete>
+    <!--    #{拼String},${直接拼接}-->
+    <!--    当使用${}时，MyBatis会直接将参数值拼接到SQL语句中，而不会进行任何类型转换或转义。这意味着，如果参数值是字符串，它将被原样插入到SQL语句中。-->
+    <!--    当使用#{}时，MyBatis会将参数值作为一个占位符，然后在执行SQL语句时将其替换为实际的值。这可以防止SQL注入攻击，因为参数值会被正确地转义。-->
 
 
 

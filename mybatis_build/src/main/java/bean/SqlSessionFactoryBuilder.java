@@ -42,4 +42,11 @@ public class SqlSessionFactoryBuilder {
 
         return sqlSessionFactory;
     }
+
+    private Transaction getTransaction(Element transactionElement, DataSource dataSource) {
+    }
+
+    private DataSource getDataSource(Element datasourceElement) {
+        return null;
+    }
 }
