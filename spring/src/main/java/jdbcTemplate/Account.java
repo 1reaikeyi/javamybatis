@@ -1,4 +1,4 @@
-package jbdc;
+package jdbcTemplate;
 
 import org.springframework.stereotype.Component;
 

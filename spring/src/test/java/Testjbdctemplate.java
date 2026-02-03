@@ -1,7 +1,6 @@
-import jbdc.Account;
+import jdbcTemplate.Account;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.junit.Test;
@@ -15,7 +14,7 @@ import java.util.List;
 public class Testjbdctemplate {
     @Test
     public  void testInsert() {
-        ApplicationContext ac = new AnnotationConfigApplicationContext("jbdc");
+        ApplicationContext ac = new AnnotationConfigApplicationContext("jdbcTemplate");
         JdbcTemplate jdbcTemplate = ac.getBean("jdbcTemplate", JdbcTemplate.class);
         String sql = "insert into account(name,money,id) values(?,?,?)";
         int update = jdbcTemplate.update(sql, "马小六", 1000, "003");
@@ -23,7 +22,7 @@ public class Testjbdctemplate {
     }
     @Test
     public  void testUpdate() {
-        ApplicationContext ac = new AnnotationConfigApplicationContext("jbdc");
+        ApplicationContext ac = new AnnotationConfigApplicationContext("jdbcTemplate");
         JdbcTemplate jdbcTemplate = ac.getBean("jdbcTemplate", JdbcTemplate.class);
         String sql = "update account set money=? where name=?";
         int update = jdbcTemplate.update(sql, 10000, "马小六");
@@ -31,7 +30,7 @@ public class Testjbdctemplate {
     }
         @Test
         public  void testDelete() {
-            ApplicationContext ac = new AnnotationConfigApplicationContext("jbdc");
+            ApplicationContext ac = new AnnotationConfigApplicationContext("jdbcTemplate");
             JdbcTemplate jdbcTemplate = ac.getBean("jdbcTemplate", JdbcTemplate.class);
             String sql = "delete from account where name=?";
             int update = jdbcTemplate.update(sql, "马小六");
@@ -39,7 +38,7 @@ public class Testjbdctemplate {
         }
         @Test
         public  void testSelectAccount() {
-            ApplicationContext ac = new AnnotationConfigApplicationContext("jbdc");
+            ApplicationContext ac = new AnnotationConfigApplicationContext("jdbcTemplate");
             JdbcTemplate jdbcTemplate = ac.getBean("jdbcTemplate", JdbcTemplate.class);
             String sql = "select name, money from account where name = ?";
             Account account = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Account.class), "马小六");
@@ -47,7 +46,7 @@ public class Testjbdctemplate {
         }
         @Test
         public  void testSelectAll() {
-            ApplicationContext ac = new AnnotationConfigApplicationContext("jbdc");
+            ApplicationContext ac = new AnnotationConfigApplicationContext("jdbcTemplate");
             JdbcTemplate jdbcTemplate = ac.getBean("jdbcTemplate", JdbcTemplate.class);
             String sql = "select name, money from account";
             List<Account> accountDaos = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Account.class));
@@ -55,7 +54,7 @@ public class Testjbdctemplate {
         }
         @Test
         public  void testCount() {
-            ApplicationContext ac = new AnnotationConfigApplicationContext("jbdc");
+            ApplicationContext ac = new AnnotationConfigApplicationContext("jdbcTemplate");
             JdbcTemplate jdbcTemplate = ac.getBean("jdbcTemplate", JdbcTemplate.class);
             String sql = "select count(*) from account";
             int count = jdbcTemplate.queryForObject(sql, Integer.class);
@@ -64,7 +63,7 @@ public class Testjbdctemplate {
         //批量
         @Test
         public  void testBatchInsert() {
-            ApplicationContext ac = new AnnotationConfigApplicationContext("jbdc");
+            ApplicationContext ac = new AnnotationConfigApplicationContext("jdbcTemplate");
             JdbcTemplate jdbcTemplate = ac.getBean("jdbcTemplate", JdbcTemplate.class);
             String sql = "insert into account(name,money) values(?,?)";
             Account account1 = new Account("马小六",1000);
@@ -78,7 +77,7 @@ public class Testjbdctemplate {
         //处理复杂的JDBC操作
         @Test
         public  void testCallback() {
-            ApplicationContext ac = new AnnotationConfigApplicationContext("jbdc");
+            ApplicationContext ac = new AnnotationConfigApplicationContext("jdbcTemplate");
             JdbcTemplate jdbcTemplate = ac.getBean("jdbcTemplate", JdbcTemplate.class);
             String sql = "insert into account(name,money) values(?,?)";
              jdbcTemplate.execute(sql, new PreparedStatementCallback<Object>() {

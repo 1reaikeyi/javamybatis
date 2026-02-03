@@ -1,0 +1,49 @@
+简单MyBatis框架构建思路：
+
+## 核心组件
+
+1. **SqlSessionFactoryBuilder**
+   - 入口类，负责读取配置文件构建 `SqlSessionFactory`
+   - 接收 `InputStream` 参数
+
+2. **SqlSessionFactory**
+   - 工厂类，生产 `SqlSession`
+   - 持有 `Configuration` 配置对象
+
+3. **Configuration**
+   - 全局配置中心
+   - 管理数据源 `DataSource` 和映射器 `Mapper`
+
+4. **SqlSession**
+   - 核心执行类
+   - 提供 `selectOne()`、`getMapper()` 等方法
+   - 持有事务对象 `Transaction`
+
+5. **Transaction**
+   - 事务接口
+   - 实现类 `JDBCTransation` 管理数据库连接
+
+6. **DataSource**
+   - 数据源接口
+   - `UNPOOLDataSource` - 非池化连接
+   - `POOLDataSource` - 连接池（待实现）
+
+7. **Mapper & MapperProxy**
+   - `Mapper` - 映射信息（SQL+参数+返回值）
+   - `MapperProxy` - 动态代理，拦截方法调用执行SQL
+
+## 调用流程
+
+```
+SqlSessionFactoryBuilder.build()
+    ↓
+Configuration (解析配置)
+    ↓
+SqlSessionFactory
+    ↓
+SqlSession.openSession()
+    ↓
+SqlSession.selectOne() / getMapper()
+    ↓
+MapperProxy (动态代理执行SQL)
+```
