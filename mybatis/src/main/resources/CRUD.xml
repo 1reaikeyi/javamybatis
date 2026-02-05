@@ -17,10 +17,10 @@
         update shuihu set gender = #{gender} where id = #{id};
     </update>
 
-    <select id="getUserById" resultType="function.Usee">
+    <select id="getUserById" resultType="resource.Usee">
         select * from shuihu where id = #{id};
     </select>
-    <select id="getAllUsers" resultType="function.Usee">
+    <select id="getAllUsers" resultType="resource.Usee">
         select * from shuihu;
     </select>
 

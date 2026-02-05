@@ -1,4 +1,4 @@
-package annotion;
+package resource;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;

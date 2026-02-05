@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapperment 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="function.Dao">
+<mapper namespace="CRUD.Dao">
 
     <insert id="insert">
         insert into shuihu (name,id,workplace,salary,gender,job)
@@ -17,11 +17,12 @@
         update shuihu set job = #{job} where id = #{id};
     </update>
 
-    <select id="selectOne" resultType="function.Usee">
+    <select id="selectOne" resultType="resource.Usee">
         select * from shuihu where id = #{id};
     </select>
-    <select id="selectAll" resultType="function.Usee">
+    <select id="selectAll" resultType="resource.Usee">
         select * from shuihu;
     </select>
+
 
 </mapper>

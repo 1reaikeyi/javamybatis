@@ -1,4 +1,4 @@
-package function;
+package resourcce;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.datasource.DataSourceFactory;

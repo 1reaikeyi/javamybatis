@@ -6,7 +6,7 @@
             <transactionManager type="JDBC"/>
             <dataSource type="UNPOOLED">
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jbdc:mysql://localhost:3306/tostu"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/tostu"/>
                 <property name="username" value="root"/>
                 <property name="password" value="111222"/>
             </dataSource>

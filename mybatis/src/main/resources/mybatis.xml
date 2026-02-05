@@ -4,12 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-    <properties resource="resource.properties"></properties>
-
+    <properties resource="resource.properties"/>
     <settings>
         <setting name="logImpl" value="SLF4J"/>
     </settings>
 
+    <typeAliases>
+        <typeAlias type="resource.Usee" alias="Usee"/>
+<!--        <typeAlias type="resource.Usee/>-->
+    </typeAliases>
 
     <environments default="develop">
         <environment id="develop">
@@ -38,7 +41,7 @@
 
         <environment id="druid">
             <transactionManager type="JDBC"/>
-            <dataSource type="function.DruidDataSourceFactory">
+            <dataSource type="resourcce.DruidDataSourceFactory">
                 <property name="driver" value="${mybatis.driver}"/>
                 <property name="url" value="${mybatis.url}"/>
                 <property name="username" value="${mybatis.username}"/>

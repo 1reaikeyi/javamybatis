@@ -1,14 +1,12 @@
-import function.Dao;
-import function.SqlSessionUtil;
-import function.Usee;
+import CRUD.Dao;
+import resource.SqlSessionUtil;
+import resource.Usee;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class TestDAO {
+public class TestCRUD {
     @Test
     public void test_1() {
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
@@ -54,7 +52,9 @@ public class TestDAO {
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
         Dao dao = sqlSession.getMapper(Dao.class);
         List<Usee> usees = dao.selectAll();
-        System.out.println(usees);
+        for (Usee usee : usees) {
+            System.out.println(usee);
+        }
         sqlSession.commit();
         sqlSession.close();
     }

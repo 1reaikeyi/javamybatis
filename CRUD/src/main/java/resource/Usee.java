@@ -1,4 +1,4 @@
-package annotion;
+package resource;
 
 public class Usee {
     /**

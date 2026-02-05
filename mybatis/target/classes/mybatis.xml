@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
-        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        PUBLIC "-//mybatis.org//DTD jdbcTemplate.Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-    <properties resource="resource.properties"></properties>
-
+    <properties resource="resource.properties"/>
     <settings>
         <setting name="logImpl" value="SLF4J"/>
     </settings>
 
+    <typeAliases>
+        <typeAlias type="function.Usee" alias="Usee"/>
+<!--        <typeAlias type="function.Usee/>-->
+    </typeAliases>
 
     <environments default="develop">
         <environment id="develop">

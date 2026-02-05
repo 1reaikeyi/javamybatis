@@ -25,6 +25,8 @@
     </environments>
     <mappers>
         <mapper resource="CRUD.xml"/>
+        <mapper resource="annotation.xml"/>
+        <mapper resource="$.xml"/>
     </mappers>
 
 </configuration>

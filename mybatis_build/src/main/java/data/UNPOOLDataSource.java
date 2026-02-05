@@ -1,4 +1,4 @@
-package core;
+package data;
 
 import javax.sql.DataSource;
 import java.io.PrintWriter;
@@ -34,6 +34,7 @@ public class UNPOOLDataSource implements DataSource {
         Connection connection = DriverManager.getConnection(url, user, password);
         return connection;
     }
+
 
     @Override
     public Connection getConnection(String username, String password) throws SQLException {
