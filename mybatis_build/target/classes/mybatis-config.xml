@@ -14,7 +14,7 @@
     </environments>
 
     <mappers>
-        <mapper resource="map.xml"/>
+        <mapper resource="mapper.xml"/>
     </mappers>
 
 </configuration>

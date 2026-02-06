@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapperment 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="map.Dao">
+    <!--    使用Param-->
+    <update id="update">
+        update shuihu set workplace = #{workplace},job = #{job} where name = #{name}
+    </update>
+
+</mapper>
+    

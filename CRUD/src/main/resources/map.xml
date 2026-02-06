@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapperment 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="map.Dao">
+
+    <delete id="deleteAll">
+        delete from shuihu where id in (${ids})
+    </delete>
+
+    <select id="selectOne" resultType="Usee">
+        select * from shuihu where id = #{id}
+    </select>
+
+    <select id="selectList" resultType="Usee">
+        select * from shuihu
+    </select>
+
+    <select id="selectOneMap" resultType="map">
+        select * from shuihu where id = 1;
+    </select>
+
+    <select id="selectListMap" resultType="map">
+        select id,name from shuihu;
+    </select>
+
+    <select id="selectMapMap" resultType="map">
+        select id,name,salary from shuihu;
+    </select>
+
+    <select id="resultMap" resultMap="U">
+        select * from shuihu;
+    </select>
+    <resultMap id="U" type="Usee">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"/>
+        <result property="salary" column="salary"/>
+    </resultMap>
+
+</mapper>
+    

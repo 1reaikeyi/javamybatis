@@ -9,7 +9,9 @@
     <settings>
         <setting name="logImpl" value="SLF4J"/>
     </settings>
-
+    <typeAliases>
+        <typeAlias type="resource.Usee" alias="Usee"/>
+    </typeAliases>
 
     <environments default="develop">
         <environment id="develop">
@@ -25,7 +27,9 @@
     </environments>
     <mappers>
         <mapper resource="CRUD.xml"/>
-        <mapper resource="dao.xml"/>
+        <mapper resource="annotation.xml"/>
+        <mapper resource="$.xml"/>
+        <mapper resource="map.xml"/>
     </mappers>
 
 </configuration>

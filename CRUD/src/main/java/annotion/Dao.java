@@ -1,10 +1,7 @@
 package annotion;
 
+import org.apache.ibatis.annotations.*;
 import resource.Usee;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -19,5 +16,7 @@ public interface Dao {
     Usee selectOne(int id);
     @Select("select * from shuihu")
     List<Usee> selectAll();
+    //使用@Param注解
+    int updateParam(@Param("workplace")String workplace, @Param("job") String job, @Param("name") String name);
 
 }
