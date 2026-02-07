@@ -16,7 +16,7 @@ public interface Dao {
     Usee selectOne(int id);
     @Select("select * from shuihu")
     List<Usee> selectAll();
-    //使用@Param注解
+
     int updateParam(@Param("workplace")String workplace, @Param("job") String job, @Param("name") String name);
 
 }
