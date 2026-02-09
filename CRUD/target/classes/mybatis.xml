@@ -30,6 +30,7 @@
         <mapper resource="annotation.xml"/>
         <mapper resource="$.xml"/>
         <mapper resource="map.xml"/>
+        <mapper resource="dynamic.xml"/>
     </mappers>
 
 </configuration>

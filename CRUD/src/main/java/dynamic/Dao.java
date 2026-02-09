@@ -9,4 +9,6 @@ public interface Dao {
     List<Usee> selectIf(@Param("name") String name, @Param("salary") Double salary,@Param("workplace") String workplace);
     List<Usee> selectTrim(@Param("name") String name, @Param("salary") Double salary,@Param("workplace") String workplace);
     int updateSet(@Param("name") String name, @Param("salary") Double salary,@Param("workplace") String workplace);
+    int deleteForeach(@Param("ids") List<Integer> ids);
+    int insertForeach(@Param("list") List<Usee> list);
 }
