@@ -1,5 +1,8 @@
 package many;
 
+import java.util.List;
+
 public interface Onemapper {
-    One studentById(int id);
+    List<One> studentById(int id);
+    One studentStep(int id);
 }

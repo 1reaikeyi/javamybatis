@@ -13,10 +13,8 @@ public class Testmany {
     public void test_1() {
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
         Onemapper onemapper = sqlSession.getMapper(Onemapper.class);
-        One student = onemapper.studentById(101);
-        System.out.println(student.getSname());
-        System.out.println(student.getTwo());
-        sqlSession.commit();
+        List<One> student = onemapper.studentById(101);
+        System.out.println(student);
         sqlSession.close();
     }
     @Test
@@ -25,7 +23,14 @@ public class Testmany {
         Twomapper twomapper = sqlSession.getMapper(Twomapper.class);
         List<Two> two = twomapper.teacherById(202);
         System.out.println(two);
-        sqlSession.commit();
+        sqlSession.close();
+    }
+    @Test
+    public void test_3() {
+        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        Onemapper onemapper = sqlSession.getMapper(Onemapper.class);
+        One one = onemapper.studentStep(101);
+        System.out.println(one);
         sqlSession.close();
     }
 }

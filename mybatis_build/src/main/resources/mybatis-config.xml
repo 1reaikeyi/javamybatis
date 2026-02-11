@@ -14,7 +14,8 @@
     </environments>
 
     <mappers>
-        <mapper resource="map.xml"/>
+        <mapper resource="many/onemapper.xml"/>
+        <mapper resource="many/twomapper.xml"/>
     </mappers>
 
 </configuration>

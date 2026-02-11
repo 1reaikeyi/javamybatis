@@ -31,6 +31,8 @@
         <mapper resource="$.xml"/>
         <mapper resource="map.xml"/>
         <mapper resource="dynamic.xml"/>
+        <mapper resource="many/onemapper.xml"/>
+        <mapper resource="many/twomapper.xml"/>
     </mappers>
 
 </configuration>

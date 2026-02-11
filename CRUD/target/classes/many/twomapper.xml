@@ -18,7 +18,7 @@
                  inner join student on student.sid = class.sid
         where teacher.tid = #{id}
     </select>
-<!---->
+
     <select id="teacherStep" resultType="many.Two">
         select teacher.tname
         from teacher

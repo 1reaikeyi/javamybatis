@@ -16,7 +16,8 @@
         right outer join class on student.sid = class.sid
         inner join teacher on teacher.tid = class.tid where student.sid = #{id};
     </select>
-<!-- -->
+
+
     <select id="studentStep" resultMap="step">
         select student.sid, student.sname, class.tid
         from student
