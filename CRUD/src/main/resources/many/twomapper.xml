@@ -3,6 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapperment 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="many.Twomapper">
+<!--一对一关系-->
+    <select id="teacherById" resultMap="teacher">
+        select student.sname,student.subject,teacher.tname
+        from teacher
+                 right outer join class on teacher.tid = class.tid
+                 inner join student on student.sid = class.sid
+        where teacher.tid = #{id}
+    </select>
     <resultMap id="teacher" type="many.Two">
         <id property="tid" column="tid"/>
         <result property="tname" column="tname"/>
@@ -11,19 +19,40 @@
             <result property="sid" column="sid"/>
         </association>
     </resultMap>
-    <select id="teacherById" resultMap="teacher">
-        select student.sname,student.subject,teacher.tname
-        from teacher
-                 right outer join class on teacher.tid = class.tid
-                 inner join student on student.sid = class.sid
-        where teacher.tid = #{id}
-    </select>
-<!---->
-    <select id="teacherStep" resultType="many.Two">
+<!--分布2-->
+    <select id="studentStep" resultType="many.Two">
         select teacher.tname
         from teacher
-        where teacher.tid = #{teaid}
+        where teacher.tid = #{tid}
     </select>
+<!--一对多关系 -->
+    <select id="teacherCollection" resultMap="list">
+        select teacher.tid,teacher.tname, student.sname
+        from teacher
+        inner join  class on class.tid = teacher.tid
+        left outer join student on student.sid = class.sid
+        where teacher.tid = #{id}
+    </select>
+    <resultMap id="list" type="many.Two">
+        <id property="tid" column="tid"></id>
+        <result property="tname" column="tname"/>
+        <collection property="stuList" ofType="many.One">
+            <result property="sname" column="sname"/>
+        </collection>
+    </resultMap>
+<!--分布-->
+    <select id="teacherStep" resultMap="teacher_step">
+        select teacher.tid, teacher.tname, teacher.teach, class.sid
+        from teacher
+                 inner join  class on class.tid = teacher.tid
+        where teacher.tid = #{id}
+    </select>
+    <resultMap id="teacher_step" type="many.Two">
+        <id property="tid" column="tid"></id>
+        <result property="tname" column="tname"/>
+        <result property="teach" column="teach"/>
+        <collection property="stuList" select="many.Onemapper.teacherStep" column="sid"/>
+    </resultMap>
 
 </mapper>
     

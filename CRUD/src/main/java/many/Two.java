@@ -1,16 +1,21 @@
 package many;
 
+import java.util.List;
+
 public class Two {
     private Integer tid;
     private String tname;
     private String teach;
     private One one;
     public Two() {}
-    
-    public Two(Integer tid, String tname, String teach) {
-        this.tid = tid;
-        this.tname = tname;
-        this.teach = teach;
+    private List<One> stuList;
+
+    public List<One> getStuList() {
+        return stuList;
+    }
+
+    public void setStuList(List<One> stuList) {
+        this.stuList = stuList;
     }
 
     public Two(Integer tid, String tname, String teach, One one) {
@@ -59,6 +64,7 @@ public class Two {
                 ", tname='" + tname + '\'' +
                 ", teach='" + teach + '\'' +
                 ", one=" + one +
+                "," + stuList +
                 '}';
     }
 }

@@ -6,12 +6,6 @@ public class One {
     private String subject;
     private Two two;
     public One() {}
-    
-    public One(Integer sid, String sname, String subject) {
-        this.sid = sid;
-        this.sname = sname;
-        this.subject = subject;
-    }
 
     public One(Integer sid, Two two, String subject, String sname) {
         this.sid = sid;

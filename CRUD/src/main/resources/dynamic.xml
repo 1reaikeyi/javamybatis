@@ -33,18 +33,6 @@
     where name = #{name};
     </update>
 
-    <delete id="deleteForeach">
-    delete from shuihu where id in
-        <foreach collection="ids" open="(" close=")" item="idem" separator=",">
-        #{idem}
-        </foreach>
-    </delete>
 
-    <insert id="insertForeach">
-    insert into shuihu (name,id,workplace,salary,gender,job) values
-        <foreach collection="list" item="values" separator=",">
-        (#{values.name},#{values.id},#{values.workplace},#{values.salary},#{values.gender},#{values.job})
-        </foreach>
-    </insert>
 </mapper>
     
