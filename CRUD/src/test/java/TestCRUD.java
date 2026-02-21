@@ -1,5 +1,5 @@
 import CRUD.Dao;
-import resource.SqlSessionUtil;
+import resource.SqlSessionFactotyBuilderUtil;
 import resource.Usee;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
@@ -9,7 +9,7 @@ import java.util.List;
 public class TestCRUD {
     @Test
     public void test_1() {
-        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SqlSession sqlSession = SqlSessionFactotyBuilderUtil.getSqlSession();
         Dao dao = sqlSession.getMapper(Dao.class);
         Usee usee = new Usee("宋江",20,"梁山",800.0,"骗子","大侠");
         int i = dao.insert(usee);
@@ -19,7 +19,7 @@ public class TestCRUD {
     }
     @Test
     public void test_2() {
-        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SqlSession sqlSession = SqlSessionFactotyBuilderUtil.getSqlSession();
         Dao dao = sqlSession.getMapper(Dao.class);
         Usee usee = new Usee();
         usee.setId(20);
@@ -31,7 +31,7 @@ public class TestCRUD {
     }
     @Test
     public void test_3() {
-        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SqlSession sqlSession = SqlSessionFactotyBuilderUtil.getSqlSession();
         Dao dao = sqlSession.getMapper(Dao.class);
         int i = dao.delete(20);
         System.out.println(i);
@@ -40,7 +40,7 @@ public class TestCRUD {
     }
     @Test
     public void test_4() {
-        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SqlSession sqlSession = SqlSessionFactotyBuilderUtil.getSqlSession();
         Dao dao = sqlSession.getMapper(Dao.class);
         Usee usee = dao.selectOne(20);
         System.out.println(usee);
@@ -49,7 +49,7 @@ public class TestCRUD {
     }
     @Test
     public void test_5() {
-        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SqlSession sqlSession = SqlSessionFactotyBuilderUtil.getSqlSession();
         Dao dao = sqlSession.getMapper(Dao.class);
         List<Usee> usees = dao.selectAll();
         for (Usee usee : usees) {

@@ -2,7 +2,7 @@
 import all.Dao;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
-import resource.SqlSessionUtil;
+import resource.SqlSessionFactotyBuilderUtil;
 import resource.Usee;
 
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.List;
 public class TestAll {
     @Test
     public void test_1() {
-        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SqlSession sqlSession = SqlSessionFactotyBuilderUtil.getSqlSession();
         Dao mapper = sqlSession.getMapper(Dao.class);
         List<Integer> list = new ArrayList<>();
         list.add(20);list.add(21);list.add(22);
@@ -22,7 +22,7 @@ public class TestAll {
     }
     @Test
     public void test_2() {
-        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SqlSession sqlSession = SqlSessionFactotyBuilderUtil.getSqlSession();
         Dao mapper = sqlSession.getMapper(Dao.class);
         Usee songJiang = new Usee("宋江", 1001, "梁山泊", 8000.0, "寨主", "男");
         Usee luJunYi = new Usee("卢俊义", 1002, "梁山泊", 7800.0, "副寨主", "男");

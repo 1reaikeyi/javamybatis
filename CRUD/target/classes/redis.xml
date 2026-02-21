@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapperment 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="redis.Dao">
+<!--    二级缓存-->
+    <select id="selectById" resultType="redis.Usee">
+        select * from shuihu where id = #{id}
+    </select>
+
+<!--   一级缓存 -->
+    <cache/>
+    <select id="selectOne" resultType="redis.Usee">
+        select * from shuihu where id = #{id}
+    </select>
+<!--打断清空缓存-->
+    <insert id="insertOne">
+        insert into shuihu (name,id,workplace,salary,gender,job)
+        values (#{name},#{id},#{workplace},#{salary},#{gender},#{job});
+    </insert>
+</mapper>
+    

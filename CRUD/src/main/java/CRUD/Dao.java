@@ -10,5 +10,4 @@ public interface Dao {
     int insert(Usee usee);
     Usee selectOne(int id);
     List<Usee> selectAll();
-
 }

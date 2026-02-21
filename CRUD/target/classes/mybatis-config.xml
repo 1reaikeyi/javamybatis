@@ -8,10 +8,21 @@
 
     <settings>
         <setting name="logImpl" value="SLF4J"/>
+<!--        延迟加载-->
+        <setting name="lazyLoadingEnabled" value="false"/>
+<!--        二级缓存-->
+<!--        默认似乎true-->
+        <setting name="cacheEnabled" value="true"/>
     </settings>
+
+<!--    起别名-->
     <typeAliases>
         <typeAlias type="resource.Usee" alias="Usee"/>
     </typeAliases>
+    
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
 
     <environments default="develop">
         <environment id="develop">
@@ -31,6 +42,10 @@
         <mapper resource="$.xml"/>
         <mapper resource="map.xml"/>
         <mapper resource="dynamic.xml"/>
+        <mapper resource="all.xml"/>
+        <mapper resource="redis.xml"/>
+        <mapper resource="limit.xml"/>
+
         <mapper resource="many/onemapper.xml"/>
         <mapper resource="many/twomapper.xml"/>
     </mappers>

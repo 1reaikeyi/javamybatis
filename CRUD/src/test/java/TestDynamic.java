@@ -1,16 +1,15 @@
 import dynamic.Dao;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
-import resource.SqlSessionUtil;
+import resource.SqlSessionFactotyBuilderUtil;
 import resource.Usee;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TestDynamic {
     @Test
     public void test_1() {
-        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SqlSession sqlSession = SqlSessionFactotyBuilderUtil.getSqlSession();
         Dao mapper = sqlSession.getMapper(Dao.class);
         List<Usee> usees1 = mapper.selectIf("唐僧", Double.valueOf("6000.0"),"大唐");
         List<Usee> usees2 = mapper.selectIf("唐僧", Double.valueOf("6000.0"),"");
@@ -25,7 +24,7 @@ public class TestDynamic {
     }
     @Test
     public void test_2() {
-        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SqlSession sqlSession = SqlSessionFactotyBuilderUtil.getSqlSession();
         Dao mapper = sqlSession.getMapper(Dao.class);
         List<Usee> usees1 = mapper.selectTrim("唐僧", Double.valueOf("6000.0"),"大唐");
         List<Usee> usees2 = mapper.selectTrim("唐僧", Double.valueOf("6000.0"),"");
@@ -40,7 +39,7 @@ public class TestDynamic {
     }
     @Test
     public void test_3() {
-        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SqlSession sqlSession = SqlSessionFactotyBuilderUtil.getSqlSession();
         Dao mapper = sqlSession.getMapper(Dao.class);
 //        config.Usee{name='沙僧', id=3, workplace='池塘', salary=3000.0, job='打杂', gender='zoo'}
         int i = mapper.updateSet("沙僧",Double.valueOf("6000.0"),"湖北");

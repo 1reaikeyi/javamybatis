@@ -8,11 +8,11 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class SqlSessionUtil {
+public class SqlSessionFactotyBuilderUtil {
     public static SqlSession getSqlSession() {
         SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
         try {
-            InputStream inputStream = Resources.getResourceAsStream("mybatis.xml");
+            InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
             SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder.build(inputStream);
             return sqlSessionFactory.openSession();
         } catch (IOException e) {
