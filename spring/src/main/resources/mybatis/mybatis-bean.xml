@@ -5,7 +5,7 @@
        xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- 此处配置Bean、依赖注入等内容 -->
+<!-- 1.此处配置Bean、依赖注入等内容 -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/tostu"/>
@@ -13,25 +13,25 @@
         <property name="password" value="111222"/>
     </bean>
 
+<!--    2.sqlsessionFactory配置-->
     <context:component-scan base-package="mybatis"/>
-<!--    sqlsessionFactory配置-->
      <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="mybatis/mybatis.xml"/>
          <property name="typeAliasesPackage" value="mybatis"/>
          <property name="mapperLocations" value="mybatis/account.xml"/>
     </bean>
-<!--    配置Mapper扫描器，自动扫描并注册Mapper接口 -->
+
+<!--    3.配置Mapper扫描器，自动扫描并注册Mapper接口 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="mybatis"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="basePackage" value="mybatis"/>
     </bean>
-<!--    事务-->
+
+<!--    4.事务-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
-
-
 
 </beans>
