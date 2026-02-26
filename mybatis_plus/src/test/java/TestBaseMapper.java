@@ -1,16 +1,17 @@
 
-import base.CRUD.useeMapper;
-import base.resource.Usee;
+import CRUD.SqlSpringBoot;
+import CRUD.baseMapper.UseeMapper;
+import CRUD.resource.Usee;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-@SpringBootTest(classes = base.MybatisSpringBoot.class)
-public class TestCRUD {
+@SpringBootTest(classes = SqlSpringBoot.class)
+public class TestBaseMapper {
     @Autowired
-    private useeMapper useeMapper;
+    private UseeMapper useeMapper;
     @Test
     public void testCRUD() {
         List<Usee> usees = useeMapper.selectList(null);
@@ -20,13 +21,14 @@ public class TestCRUD {
     }
     @Test
     public void test_1() {
-        Usee usee = new Usee("宋江",20,"梁山",800.0,"骗子","大侠");
+        Usee usee = new Usee(20,"宋江","梁山",800.0,"骗子","大侠");
         int i = useeMapper.insert(usee);
         System.out.println(i);
     }
     @Test
     public void test_2() {
-        int i = useeMapper.deleteById(20);
+        Usee i = useeMapper.selectById(1);
+        System.out.println(i);
     }
     @Test
     public void test_3() {
@@ -38,7 +40,12 @@ public class TestCRUD {
     }
     @Test
     public void test_4() {
-        Usee i = useeMapper.selectById(1);
+        int i = useeMapper.deleteById(20);
         System.out.println(i);
+    }
+
+    @Test
+    public void test_mapperxml() {
+        System.out.println(useeMapper.selectByName("孙悟空"));
     }
 }

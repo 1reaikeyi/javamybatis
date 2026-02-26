@@ -1,13 +1,13 @@
-package base;
+package CRUD;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("base.CRUD")
-public class MybatisSpringBoot {
+@MapperScan("CRUD.baseMapper")
+public class SqlSpringBoot {
     public static void main(String[] args) {
-        SpringApplication.run(MybatisSpringBoot.class, args);
+        SpringApplication.run(SqlSpringBoot.class, args);
     }
 }
