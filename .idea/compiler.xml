@@ -10,7 +10,6 @@
         <module name="spring" />
         <module name="mybatis_build" />
         <module name="CRUD" />
-        <module name="web" />
         <module name="mybatis" />
         <module name="jdbc" />
         <module name="mybatis_plus" />
@@ -19,6 +18,7 @@
     <bytecodeTargetLevel>
       <module name="pool" target="17" />
       <module name="spring_jdbc" target="17" />
+      <module name="web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -30,6 +30,7 @@ public class TestBaseMapper {
         Usee i = useeMapper.selectById(1);
         System.out.println(i);
     }
+
     @Test
     public void test_3() {
         Usee usee = new Usee();
@@ -38,6 +39,7 @@ public class TestBaseMapper {
         int i = useeMapper.updateById(usee);
         System.out.println(i);
     }
+
     @Test
     public void test_4() {
         int i = useeMapper.deleteById(20);

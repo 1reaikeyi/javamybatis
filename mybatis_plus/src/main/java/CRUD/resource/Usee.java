@@ -1,5 +1,6 @@
 package CRUD.resource;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
@@ -28,7 +29,7 @@ public class Usee {
     private Integer id;
     //    @TableField("name")，如果Class和数据库不一致，使用这个去匹配
     private String name;
-
+//    @TableField(select = false ),如果不希望出现工作地点
     private String workplace;
 //    @TableField("`salary`"),如果salary是关键字
     private Double salary;
@@ -46,6 +47,6 @@ public class Usee {
                 ", salary=" + salary +
                 ", job='" + job + '\'' +
                 ", gender='" + gender + '\'' +
-                '}';
+                '}'+"\n";
     }
 }
