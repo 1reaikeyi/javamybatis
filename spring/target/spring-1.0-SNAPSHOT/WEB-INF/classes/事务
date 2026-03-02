@@ -1,0 +1,13 @@
+
+//    @Transactional(propagation = Propagation.REQUIRED,传播行为 = Propagation.REQUIRED)
+//    @Transactional(rollbackFor = RuntimeException.class,回滚RuntimeException异常类)
+//    @Transactional(rollbackFor = NotRuntimeException.class,回滚除了RuntimeException异常类)
+//    @Transactional(isolation = Isolation.READ_COMMITTED,隔离)
+//    @Transactional(timeout = 5,超时时间为5秒)
+//    @Transactional(readOnly ,只读事务，不允许修改数据库)
+
+    引入事务管理器，可以使用注解@EnableTransactionManagement+@Transactional开启事务注解驱动
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <tx:annotation-driven transaction-manager="txManager"/>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapperment 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.function.Dao">
+
+    <update id="update">
+        update accountServer set money=#{money} where name=#{accountant};
+    </update>
+
+    <select id="selectById" resultType="mybatis.Account">
+        select money, name as accountant from accountServer where name = #{accountant};
+    </select>
+
+    <select id="selectAll" resultType="mybatis.Account">
+        select money, name as accountant from accountServer;
+    </select>
+
+
+
+</mapper>
