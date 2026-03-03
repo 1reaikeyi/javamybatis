@@ -209,7 +209,27 @@ public class TestWrapper {
         System.out.println(list);
     }
     @Test
-    public void test_last() {}
+    public void test_limit() {
+        LambdaQueryWrapper<Usee> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.last("limit 1,1");
+        List<Usee> list = useeMapper.selectList(queryWrapper);
+        System.out.println(list);
+    }
+    @Test
+    public void test_exists() {
+        LambdaQueryWrapper<Usee> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.exists("select * from shuihu where id > 4");
+//        SELECT id,name,workplace,salary,job,gender FROM shuihu WHERE (EXISTS (select * from shuihu where id > 4))
+        List<Usee> list = useeMapper.selectList(queryWrapper);
+        System.out.println(list);
+    }
+    @Test
+    public void test_select() {
+        LambdaQueryWrapper<Usee> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.select(Usee::getId,Usee::getName);
+        List<Usee> list = useeMapper.selectList(queryWrapper);
+        System.out.println(list);
+    }
 
 
 }

@@ -6,5 +6,8 @@
     <select id="selectByName" resultType="CRUD.resource.Usee">
         select * from shuihu where name = #{name}
     </select>
+    <select id="pageByName" resultType="CRUD.resource.Usee">
+        select * from shuihu where name = #{name}
+    </select>
 </mapper>
     

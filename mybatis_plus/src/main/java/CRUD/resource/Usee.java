@@ -1,5 +1,6 @@
 package CRUD.resource;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -24,8 +25,12 @@ public class Usee {
      * )
      *     comment '水浒传';
      */
-
-    @TableId("id")
+//          自增
+//    @TableId(value = "id",type = IdType.AUTO)
+//           手动输入
+    @TableId(value = "id",type = IdType.NONE)
+//            雪花填入
+//    @TableId(value = "id",type = IdType.ASSIGN_ID)
     private Integer id;
     //    @TableField("name")，如果Class和数据库不一致，使用这个去匹配
     private String name;

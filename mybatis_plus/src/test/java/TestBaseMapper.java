@@ -21,7 +21,9 @@ public class TestBaseMapper {
     }
     @Test
     public void test_1() {
-        Usee usee = new Usee(20,"宋江","梁山",800.0,"骗子","大侠");
+        Usee usee = new Usee();
+        usee.setName("宋江");
+        usee.setJob("骗子");
         int i = useeMapper.insert(usee);
         System.out.println(i);
     }
