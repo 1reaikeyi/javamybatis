@@ -1,6 +1,6 @@
 
 import CRUD.SqlSpringBoot;
-import CRUD.baseMapper.UseeMapper;
+import CRUD.BaseMapper.UseeMapper;
 import CRUD.resource.Usee;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class TestBaseMapper {
     public void test_1() {
         Usee usee = new Usee();
         usee.setName("宋江");
-        usee.setJob("骗子");
+        usee.setWorkplace("骗子");
         int i = useeMapper.insert(usee);
         System.out.println(i);
     }

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapperment 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="CRUD.baseMapper.UseeMapper">
+<mapper namespace="CRUD.BaseMapper.UseeMapper">
     <select id="selectByName" resultType="CRUD.resource.Usee">
         select * from shuihu where name = #{name}
     </select>

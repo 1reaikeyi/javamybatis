@@ -13,7 +13,8 @@ public class TestIService {
     private UseeService useeService;
     @Test
     public void test_1() {
-        Usee usee = new Usee(20,"宋江","梁山",800.0,"骗子","大侠");
+        Usee usee = new Usee();
+
         boolean i = useeService.save(usee);
         System.out.println(i);
     }

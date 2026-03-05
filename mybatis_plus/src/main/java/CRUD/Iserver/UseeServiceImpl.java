@@ -1,6 +1,6 @@
 package CRUD.Iserver;
 
-import CRUD.baseMapper.UseeMapper;
+import CRUD.BaseMapper.UseeMapper;
 import CRUD.resource.Usee;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;

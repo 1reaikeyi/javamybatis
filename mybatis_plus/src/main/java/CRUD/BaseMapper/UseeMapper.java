@@ -1,4 +1,4 @@
-package CRUD.baseMapper;
+package CRUD.BaseMapper;
 
 import CRUD.resource.Usee;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;

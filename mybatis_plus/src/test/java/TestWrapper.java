@@ -1,5 +1,5 @@
 import CRUD.SqlSpringBoot;
-import CRUD.baseMapper.UseeMapper;
+import CRUD.BaseMapper.UseeMapper;
 import CRUD.resource.Usee;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
